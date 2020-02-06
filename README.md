@@ -3,3 +3,7 @@
 - .gitignore
 - .editorconfig
 - ESlint
+- Process/Exit codes
+- Npm script
+- HTML, CSS, JavaScript, NodeJS
+- Server-side / Client
