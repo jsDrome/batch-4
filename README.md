@@ -11,3 +11,4 @@
 11) Babel and Transpilation
 12) Webpack build process
 13) Webpack dev, Webpack prod, Webpack common
+14) Google Firebase
