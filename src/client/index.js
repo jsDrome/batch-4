@@ -3,23 +3,24 @@ import { render } from 'react-dom';
 
 class App extends React.Component {
   state = {
-    count: 0,
+    dollars: 0,
+    result: null,
   };
 
-  increment = () => {
-    const currentCount = this.state.count;
+  convert = async () => {
+    const responseFromBackend = await window.fetch('/rates');
+    const value = await responseFromBackend.json();
 
     this.setState({
-      // eslint-disable-next-line no-magic-numbers
-      count: currentCount + 1,
+      result: value.inr,
     });
-  };
+  }
 
   render() {
     return <div>
-      <h1>{this.state.count}</h1>
-      <button onClick={this.increment}>+</button>
-      <button onClick={this.decrement}>-</button>
+      <input type="text" value={this.state.dollars} /> $ <br />
+      <input type="submit" onClick={this.convert} />
+      {this.state.result && <p>{this.state.result} INR</p>}
     </div>
   }
 }
